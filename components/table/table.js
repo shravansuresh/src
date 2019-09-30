@@ -8,15 +8,12 @@ $(() => {
     //Table header
     let tr = document.createElement("tr");
     tableBody.appendChild(tr);
-    config.forEach((row, rowIdx) => {
-      for (const col in row) {
-        let th = document.createElement("th");
-        th.width = "75";
-        th.appendChild(document.createTextNode(row[col]));
-        tr.appendChild(th);
-        debugger;
-      }
-    });
+    for (let [key, value] of Object.entries(config)) {
+      let th = document.createElement("th");
+      th.width = "75";
+      th.appendChild(document.createTextNode(value.title));
+      tr.appendChild(th);
+    }
 
     // Table body
     data.forEach((row, rowIdx) => {

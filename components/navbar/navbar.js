@@ -14,21 +14,35 @@ $(() => {
     }
   ];
 
+  buildList = data => {
+    let html = "<ul>";
+    for (item in data) {
+      html += "<li><a onclick='clickMenu()'>" + data[item].title + "</a></li>";
+    }
+    html += "</ul>";
+    return html;
+  };
+
   clickMenu = () => {
     let menuStr = event.target.text;
     window.location.hash = "#" + menuStr;
+    setContent(menuStr);
     createActiveMenu(menuStr);
-    switch (menuStr) {
-      case "home":
-        $("#content").load("./pages/home/home.html");
-        break;
+  };
+
+  setContent = menuStr => {
+    $("#content").load("./pages/" + menuStr + "/" + menuStr + ".html", () => {
+      setData(menuStr);
+    });
+  };
+
+  setData = menu => {
+    switch (menu) {
       case "students":
-        $("#content").load("./pages/students/students.html", () => {
-          window.createTable("studentsTbl", window.studConfig, window.studData);
-        });
+        window.createTable("studentsTbl", window.studConfig, window.studData);
         break;
       case "employee":
-        $("#content").load("./pages/employee/employee.html");
+        console.log("Employee");
         break;
 
       default:
@@ -44,14 +58,5 @@ $(() => {
       elem.classList.remove("active");
       elem.text == activeMenu ? elem.classList.add("active") : "";
     });
-  };
-
-  buildList = data => {
-    let html = "<ul>";
-    for (item in data) {
-      html += "<li><a onclick='clickMenu()'>" + data[item].title + "</a></li>";
-    }
-    html += "</ul>";
-    return html;
   };
 });
