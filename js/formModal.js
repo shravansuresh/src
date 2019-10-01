@@ -1,4 +1,5 @@
-function addRowModal(tableArr, type){
+$(() => {
+window.addRowModal = (tableArr, type) => {
     let headArr = tableArr;
     let inputType = type;
     let i = 0;
@@ -8,7 +9,7 @@ function addRowModal(tableArr, type){
     document.getElementById("modalBody").appendChild(form);
     headArr.forEach(element => {
         let label = document.createElement("LABEL");
-        label.innerHTML = element;
+        label.innerHTML = element.title;
         form.appendChild(label);
         let input = document.createElement("INPUT");
         input.setAttribute("type", inputType[i]);
@@ -19,7 +20,7 @@ function addRowModal(tableArr, type){
             input.setAttribute("pattern", "+91[0-9]{4}[0-9]{6}");
             input.setAttribute("placeholder","+91-XXXX-XXXXXX"); 
         }
-        input.setAttribute("id", element);
+        input.setAttribute("id", element.title);
         form.appendChild(input);
         let lineBreak = document.createElement('br');
         form.appendChild(lineBreak);
@@ -39,7 +40,7 @@ function addRowModal(tableArr, type){
     }  
 }
 
-function handleForm(storageId, tableArr){
+window.handleForm = (storageId, tableArr) => {
     let headArr = tableArr;
     if(formValidation(headArr) == headArr.length){
         let data = [];
@@ -47,7 +48,7 @@ function handleForm(storageId, tableArr){
         let i =0;
         let form = document.getElementById("formData");
         headArr.forEach(element => {
-            rowObj[element] = form[i].value;
+            rowObj[element.title] = form[i].value;
             i++;
         });
         if(retrieveFromStorage(storageId) == null){
@@ -64,14 +65,8 @@ function handleForm(storageId, tableArr){
     }
 }
 
-function formValidation(headArr){
-    let typeArr;
-    if(headArr == studThead){
-        typeArr = studTtype;
-    }
-    else{
-        typeArr = empTtype
-    }
+window.formValidation = (headArr) => {
+    let typeArr=["number", "text", "date", "email"];
     let count = 0;
     headArr.forEach((item, index) =>{
         type = typeArr[index];
@@ -139,7 +134,7 @@ function formValidation(headArr){
     return count;
 }
 
-function formUniqueChecker(value, colIndex){
+window.formUniqueChecker = (value, colIndex) => {
     let index;
     let rows = document.getElementById("tableId").rows;
     let unique = 0;
@@ -159,3 +154,4 @@ function displayTable(){
     document.getElementById("tableId").style.display = "block";
     window.location.reload();
 }
+});

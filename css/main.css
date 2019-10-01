@@ -1,3 +1,11 @@
 .active {
   color: blue;
 }
+.addBtn{
+  border:none;
+  background-color: white;
+  height: 50px; 
+  width: 50px;
+  display: flex;
+  justify-content: center;  
+}

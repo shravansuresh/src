@@ -8,7 +8,7 @@ window.empConfig = [
         key: "name"
     },
     {
-        title: "Date Of Birth",
+        title: "Date of Birth",
         key: "dob"
     },
     {
@@ -17,6 +17,7 @@ window.empConfig = [
     }
   ];
   
-  // window.studConfig = ["ID", "Name", "Age"];
-  
-  window.empData = retrieveFromStorage("empArry");
+  // window.empConfig = ["ID", "Name", "Date of Birth", "Email"];
+let storedData = localStorage.getItem("empArry");
+let toJSON = JSON.parse(storedData);
+window.empData = toJSON;
