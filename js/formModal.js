@@ -42,6 +42,7 @@ window.addRowModal = (tableArr, type) => {
 
 window.handleForm = (storageId, tableArr) => {
     let headArr = tableArr;
+    debugger
     if(formValidation(headArr) == headArr.length){
         let data = [];
         let rowObj = {};
@@ -53,12 +54,12 @@ window.handleForm = (storageId, tableArr) => {
         });
         if(retrieveFromStorage(storageId) == null){
             data.push(rowObj);
-            saveToStorage(storageId, data);
+            window.saveToStorage(storageId, data);
         }
         else{
-            data = retrieveFromStorage(storageId);
+            data = window.retrieveFromStorage(storageId);
             data.push(rowObj);
-            saveToStorage(storageId, data);
+            window.saveToStorage(storageId, data);
 
         }
         displayTable();
@@ -70,9 +71,9 @@ window.formValidation = (headArr) => {
     let count = 0;
     headArr.forEach((item, index) =>{
         type = typeArr[index];
-        let formValue = document.forms["formData"][item].value;
+        let formValue = document.forms["formData"][item.title].value;
         if(formValue == 0 ){
-            alert(item+" field empty");
+            alert(item.title+" field empty");
         }
         else if(type == "number"){
             let numberPattern = /^[-+]?\d+$/;
@@ -136,9 +137,8 @@ window.formValidation = (headArr) => {
 
 window.formUniqueChecker = (value, colIndex) => {
     let index;
-    let rows = document.getElementById("tableId").rows;
-    let unique = 0;
-    for(index=0; index < rows.length; index++){
+    let rows = document.getElementById("employeesTbl").getElementsByTagName("tr");
+    for(index=1; index < rows.length; index++){
         if(value == rows[index].cells[colIndex].innerText) {
             unique = 1;
             return unique;
