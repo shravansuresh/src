@@ -1,17 +1,9 @@
-function editRow(editBtn, headArr, storageId){
-    let typeArr;
-    if(headArr === studThead)
-    {
-        typeArr = studTtype;
-    }
-    else{
-        typeArr = empTtype;
-    }
+function editRow(editBtn, headArr, storageId, typeArr){
     let rowIndex = editBtn.parentNode.rowIndex;
     let rows = document.getElementById("tableId").rows;
     if(rows[rowIndex].cells[0].contentEditable == "true"){
         if(editRowValidation(rowIndex, typeArr, headArr) == headArr.length){
-            editBtn.innerHTML = '<img src="../images/edit.png" width="30px" height="30px">';
+            editBtn.innerHTML = '<img src="./images/edit.png" width="30px" height="30px">';
             headArr.forEach( (item, index) => {
                 rows[rowIndex].cells[index].contentEditable = "false";
                 rows[rowIndex].cells[index].style.backgroundColor = "white";
@@ -29,7 +21,7 @@ function editRow(editBtn, headArr, storageId){
         }        
     }
     else{ 
-        editBtn.innerHTML = '<img src="../images/save.jpg" width="30px" height="30px">';
+        editBtn.innerHTML = '<img src="./images/save.jpg" width="30px" height="30px">';
         headArr.forEach((item, index) => {
             rows[rowIndex].cells[index].contentEditable = "true";
             rows[rowIndex].cells[index].style.backgroundColor = "#E0E0E0";   
@@ -39,19 +31,20 @@ function editRow(editBtn, headArr, storageId){
 }
 
 function editRowValidation(rowIndex, typeArr, headArr){
+    debugger
     let rows = document.getElementById("tableId").rows;
     let count = 0;
-    typeArr.forEach((type, index) => {
+    window.empType.forEach((type, index) => {
         if(type == "number"){
             let numberPattern = /^[-+]?\d+$/;
             if(numberPattern.test(rows[rowIndex].cells[index].innerText) === true){
                 if(editUniqueChecker(rows[rowIndex].cells[index].innerText, index, rowIndex) == 1)
                 {
-                    alert(headArr[index]+" already exist");
+                    alert(headArr[index].title+" already exist");
                 }
                 else if(rows[rowIndex].cells[index].innerText < 0)
                 {
-                    alert("Invalid "+headArr[index]);
+                    alert("Invalid "+headArr[index].title);
                 }
                 else{
                     count++;
@@ -59,7 +52,7 @@ function editRowValidation(rowIndex, typeArr, headArr){
                 
             } 
             else{
-                alert("Invalid "+headArr[index]);
+                alert("Invalid "+headArr[index].title);
             }
         }
         else if(type == "text"){
@@ -69,7 +62,7 @@ function editRowValidation(rowIndex, typeArr, headArr){
                 count++;
             }
             else{
-                alert(headArr[index]+" must be in alphabets only");
+                alert(headArr[index].title+" must be in alphabets only");
             }
         }
         else if(type == "date"){
@@ -85,7 +78,7 @@ function editRowValidation(rowIndex, typeArr, headArr){
             if(emailPattern.test(rows[rowIndex].cells[index].innerText) === true){
                 if(editUniqueChecker(rows[rowIndex].cells[index].innerText, index, rowIndex) == 1)
                 {
-                    alert(headArr[index]+" already exist");
+                    alert(headArr[index].title+" already exist");
                 }
                 else{
                     count++;
@@ -93,7 +86,7 @@ function editRowValidation(rowIndex, typeArr, headArr){
                 
             } 
             else{
-                alert("Invalid "+headArr[index]);
+                alert("Invalid "+headArr[index].title);
             }
         }
     });

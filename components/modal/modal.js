@@ -1,8 +1,8 @@
 $(() => {
     window.addRowModal = (tableArr, type, tableDiv) => {
-        alert(tableDiv);
         document.getElementById(tableDiv).style.display = "none";
         let headArr = tableArr;
+        console.log(type);
         let inputType = type;
         let i = 0;
         let form = document.createElement("FORM");
@@ -65,10 +65,10 @@ $(() => {
             }
             window.createTable(tableDiv, headArr, data)
         }
-        document.getElementById(tableDiv).getElementsByTagName('table').style.display = "";
+        document.getElementById(tableDiv).style.display = "";
     }
     
-    window.formValidation = (headArr) => {
+    window.formValidation = (headArr, tableDiv) => {
         let typeArr=["number", "text", "date", "email"];
         let count = 0;
         headArr.forEach((item, index) =>{

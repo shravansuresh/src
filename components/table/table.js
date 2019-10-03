@@ -1,5 +1,7 @@
 $(() => {
-  window.createTable = (tableDiv, config, data) => {
+  window.createTable = (tableDiv, config, data, type, storageId) => {
+    debugger
+    console.log(storageId);
     let myTableDiv = document.getElementById(tableDiv);
     let table = document.createElement("table");
     table.setAttribute("class", "tableId");
@@ -41,7 +43,7 @@ $(() => {
     //myTableDiv.appendChild(table);
     if(data != null){
         data.forEach(item => {
-            let tr = table.insertRow(-1);
+            let tr = tableBody.insertRow(-1);
             for (let [key, value] of Object.entries(item)) {
                 let td = document.createElement("td");
                 td.innerHTML = value;
@@ -60,22 +62,21 @@ $(() => {
             }
             let editBtn = document.createElement("BUTTON");
             editBtn.setAttribute("class", "Btn");
-            editBtn.innerHTML = '<img src="../images/edit.png" width="30px" height="30px">';
+            editBtn.innerHTML = '<img src="./images/edit.png" width="30px" height="30px">';
             editBtn.addEventListener("click", function(event) {
-                editRow(this, headArr, storageId);
+                editRow(this, config, storageId, type);
                 event.preventDefault();
             });
             tr.appendChild(editBtn);
             let dltBtn = document.createElement("BUTTON");
             dltBtn.setAttribute("class", "Btn");
-            dltBtn.innerHTML = '<img src="../images/delete.png" width="30px" height="30px">';
+            dltBtn.innerHTML = '<img src="./images/delete.png" width="30px" height="30px">';
             dltBtn.addEventListener("click", function(event) {
-                dltRow(this, storageId);
+                window.dltRow(this, location);
                 event.preventDefault();
             });
             tr.appendChild(dltBtn);
             myTableDiv.appendChild(table);
-            document.getElementById("search").style.display="block";
 
         });
     }
