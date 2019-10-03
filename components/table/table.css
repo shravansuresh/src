@@ -1,41 +1,41 @@
-.tableDisplay {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 88.5%;
-    display: flex;
-    justify-content: center;
-    height: 300px;
-    overflow: auto;
-    margin-bottom: 80px;  
-  }
+#employeesTbl {
+  font-family: 'Asap', sans-serif;
+  font-size: 13pt;
+  color: #333333;
+  border-collapse: collapse;
+  text-align: center;
+  width: 88.5%;
+  height: 300px;
+  overflow: auto;
+  margin-bottom: 80px;  
+}
+.tableId{
+  display: flex;
+  justify-content: center;
+}
+.tableId td {
+  border: 1px solid rgb(221, 221, 221);
+  padding: 8px;
+}
+.tableId th {
+  padding-top: 12px;
+  padding-bottom: 12px; 
+  text-align: center;
+  border: 1px solid rgb(221, 221, 221);
+  background-color: rgba(128, 128, 128, 1);
+  color: rgb(0, 0, 0);
+}
 
-  #tableDisplay td {
-    border: 1px solid rgb(221, 221, 221);
-    padding: 8px;
-  }
-  #tableId{
-    width: 100%;
-  }
-  
-  #tableDisplay th {
-    padding-top: 12px;
-    padding-bottom: 12px; 
-    text-align: center;
-    border: 1px solid rgb(221, 221, 221);
-    background-color: rgba(128, 128, 128, 1);
-    color: rgb(0, 0, 0);
-  }
-
-  .tHead{
-    position: sticky;
-    top: 0;
-    z-index: 1;
-  }
-  .Btn{
-    background-color: white;
-    border: none; 
-    color: white; 
-    margin: 1px;
-    padding: 5px 4px; 
-    cursor: pointer;
-  }
+.tHead{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.Btn{
+  background-color: white;
+  border: none; 
+  color: white; 
+  margin: 1px;
+  padding: 5px 4px; 
+  cursor: pointer;
+}

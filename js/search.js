@@ -1,10 +1,11 @@
 function searchTable(storageId){
+    debugger
     let input = document.getElementById("searchTable").value;
     let inputUp, table, tr;
     inputUp = input.toUpperCase();
     table = document.getElementById("tableId");
     tr = table.getElementsByTagName("tr");
-    let tableData = retrieveFromStorage(storageId);
+    let tableData = retrieveFromStorage("empArry");
     tableData.forEach((item, index) => {
         let flag =0;
         for (let [key, value] of Object.entries(item)) {

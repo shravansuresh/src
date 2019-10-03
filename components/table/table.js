@@ -1,6 +1,5 @@
 $(() => {
   window.createTable = (tableDiv, config, data, type, storageId) => {
-    debugger
     console.log(storageId);
     let myTableDiv = document.getElementById(tableDiv);
     let table = document.createElement("table");
@@ -76,9 +75,9 @@ $(() => {
                 event.preventDefault();
             });
             tr.appendChild(dltBtn);
-            myTableDiv.appendChild(table);
-
         });
+        myTableDiv.appendChild(table);
+        document.getElementById("search").style.display = "block";
     }
   };
 });

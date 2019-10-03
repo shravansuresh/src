@@ -1,4 +1,5 @@
 function editRow(editBtn, headArr, storageId, typeArr){
+    alert(storageId);
     let rowIndex = editBtn.parentNode.rowIndex;
     let rows = document.getElementById("tableId").rows;
     if(rows[rowIndex].cells[0].contentEditable == "true"){
@@ -10,11 +11,11 @@ function editRow(editBtn, headArr, storageId, typeArr){
             }); 
             let rowObj = {};
             headArr.forEach((item, index) => {
-                rowObj[item] = rows[rowIndex].cells[index].innerText;
+                rowObj[item.title] = rows[rowIndex].cells[index].innerText;
             });
-            let rowData = retrieveFromStorage(storageId);
+            let rowData = retrieveFromStorage("empArry");
             rowData.splice(rowIndex-1, 1, rowObj);
-            saveToStorage(storageId, rowData);
+            saveToStorage("empArry", rowData);
         } 
         else{
             rows[rowIndex].cells[0].focus();
@@ -31,7 +32,6 @@ function editRow(editBtn, headArr, storageId, typeArr){
 }
 
 function editRowValidation(rowIndex, typeArr, headArr){
-    debugger
     let rows = document.getElementById("tableId").rows;
     let count = 0;
     window.empType.forEach((type, index) => {

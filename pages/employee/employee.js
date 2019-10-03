@@ -21,5 +21,5 @@ window.empConfig = [
 let storedData = localStorage.getItem("empArry");
 let toJSON = JSON.parse(storedData);
 window.empData = toJSON;
-window.storageId = "empArry";
+window.empStorageId = "empArry";
 window.empType = ["number", "text", "date", "email"];
