@@ -1,7 +1,7 @@
 $(() => {
   window.menu = [
     {
-      title: "home",
+      title: "Home",
       route: "home.html"
     },
     {
@@ -38,10 +38,10 @@ $(() => {
 
   setData = menu => {
     switch (menu) {
-      case "students":
-        window.createTable("studentsTbl", window.studConfig, window.studData, "studArry");
+      case "Student":
+        window.createTable("studentsTbl", window.studConfig, window.studData, window.studType, window.studStorageId);
         break;
-      case "employee":
+      case "Employee":
         window.createTable("employeesTbl", window.empConfig, window.empData, window.empType, window.empStorageId);
         break;
 

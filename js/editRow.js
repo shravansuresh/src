@@ -1,5 +1,4 @@
 function editRow(editBtn, headArr, storageId, typeArr){
-    alert(storageId);
     let rowIndex = editBtn.parentNode.rowIndex;
     let rows = document.getElementById("tableId").rows;
     if(rows[rowIndex].cells[0].contentEditable == "true"){

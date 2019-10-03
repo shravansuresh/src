@@ -15,25 +15,8 @@ window.studConfig = [
 
 // window.studConfig = ["ID", "Name", "Age"];
 
-window.studData = [
-  {
-    studentID: 1,
-    name: "Aman",
-    age: "20"
-  },
-  {
-    studentID: 2,
-    name: "Amna",
-    age: "22"
-  },
-  {
-    studentID: 3,
-    name: "Appu",
-    age: "15"
-  },
-  {
-    studentID: 4,
-    name: "Minnu",
-    age: "10"
-  }
-];
+let storedData1 = localStorage.getItem("studArry");
+let toJSON1 = JSON.parse(storedData1);
+window.studData = toJSON1;
+window.studStorageId = "studArry";
+window.studType = ["number", "text", "number"];

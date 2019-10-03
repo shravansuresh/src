@@ -1,4 +1,5 @@
 function sortRow(sortBtn, sort, tableArr, storageId){
+    debugger
     const thKey = sortBtn.getAttribute('id');
     let cellIndex = (sortBtn.parentNode.cellIndex);
     let rows = document.getElementById("tableId").rows;
@@ -50,7 +51,7 @@ function sortRow(sortBtn, sort, tableArr, storageId){
     for(outerIndex = 1; outerIndex < rows.length; outerIndex++){
         let rowObj = {};
         tableArr.forEach((element, innerIndex) => {
-            rowObj[element] = rows[outerIndex].cells[innerIndex].innerText;
+            rowObj[element.title] = rows[outerIndex].cells[innerIndex].innerText;
         });
         newTableData[outerIndex-1] = rowObj;
     }
@@ -58,17 +59,17 @@ function sortRow(sortBtn, sort, tableArr, storageId){
     let btn = document.getElementById(thKey);
     if(sort == 'asc'){
         btn.setAttribute("onclick", null);
-        btn.innerHTML = '<img src="../images/down.png" width="15px" height="auto">';
+        btn.innerHTML = '<img src="./images/down.png" width="15px" height="auto">';
         btn.addEventListener("click", function(event) {
-            sortRow(this, 'dsc', tableArr, studThead);
+            sortRow(this, 'dsc', tableArr, storageId);
             event.preventDefault();
         });
     } 
     if(sort == 'dsc'){
         btn.setAttribute("onclick", null);
-        btn.innerHTML = '<img src="../images/up.png" width="15px" height="auto">';
+        btn.innerHTML = '<img src="./images/up.png" width="15px" height="auto">';
         btn.addEventListener("click", function(event) {
-            sortRow(this, 'asc', tableArr, studThead);
+            sortRow(this, 'asc', tableArr, storageId);
             event.preventDefault();
         });
     }

@@ -1,6 +1,5 @@
 $(() => {
   window.createTable = (tableDiv, config, data, type, storageId) => {
-    console.log(storageId);
     let myTableDiv = document.getElementById(tableDiv);
     let table = document.createElement("table");
     table.setAttribute("class", "tableId");
@@ -15,13 +14,12 @@ $(() => {
       let th = document.createElement("th");
       th.setAttribute("class", "tHead");
       let ascBtn = document.createElement("BUTTON");
-      th.width = "75";
       th.appendChild(document.createTextNode(value.title));
       ascBtn.setAttribute("class", "sortBtn");
       ascBtn.innerHTML = '<img src="./images/up.png" width="15px" height="auto">';
       ascBtn.setAttribute('id', value.title);
       ascBtn.addEventListener("click", function(event) {
-        sortRow(this, 'asc', headArr, storageId);
+        sortRow(this, 'asc', config, storageId);
         event.preventDefault();
       });
       th.appendChild(ascBtn);

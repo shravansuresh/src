@@ -1,8 +1,6 @@
 $(() => {
     window.addRowModal = (tableArr, type, tableDiv) => {
-        document.getElementById(tableDiv).style.display = "none";
         let headArr = tableArr;
-        console.log(type);
         let inputType = type;
         let i = 0;
         let form = document.createElement("FORM");
@@ -28,18 +26,21 @@ $(() => {
             form.appendChild(lineBreak);
             i++
         });
-        
         let modal = document.getElementById("formModal");
         modal.style.display ="block";
         var span =document.getElementsByClassName("close")[0];
         span.onclick = function(){ 
-            window.location.reload();
+            modal.style.display ="none";
+            document.getElementById(tableDiv).style.display = "";
+            $("#modalBody").load(location.href + " #modalBody");
         }
         window.onclick = function(event) {
             if (event.target == modal) {
-                window.location.reload();
+                modal.style.display ="none";
+                document.getElementById(tableDiv).style.display = "";
+                $("#modalBody").load(location.href + " #modalBody");
             }
-        }  
+        }
     }
     
     window.handleForm = (tableDiv, storageId, tableArr) => {
@@ -65,6 +66,8 @@ $(() => {
             }
             window.createTable(tableDiv, headArr, data)
         }
+        let modal = document.getElementById("formModal");
+        modal.style.display ="none";
         document.getElementById(tableDiv).style.display = "";
     }
     
@@ -82,18 +85,18 @@ $(() => {
                 if(numberPattern.test(formValue) === true){
                     if(formUniqueChecker(formValue, index, tableDiv) == 1)
                     {
-                        alert(item+" already exist");
+                        alert(item.title+" already exist");
                     }
                     else if(formValue < 0)
                     {
-                        alert("Invalid "+item);
+                        alert("Invalid "+item.title);
                     }
                     else{
                         count++;
                     }   
                 } 
                 else{
-                    alert("Invalid "+item);
+                    alert("Invalid "+item).title;
                 }
             }
             else if(type == "text"){
@@ -103,7 +106,7 @@ $(() => {
                     count++;
                 }
                 else{
-                    alert(item+" must be in alphabets only");
+                    alert(item.title+" must be in alphabets only");
                 }
             }
             else if(type == "email"){
@@ -111,7 +114,7 @@ $(() => {
                 if(emailPattern.test(formValue) === true){
                     if(formUniqueChecker(formValue, index, tableDiv) == 1)
                     {
-                        alert(item+" already exist");
+                        alert(item.title+" already exist");
                     }
                     else{
                         count++;
