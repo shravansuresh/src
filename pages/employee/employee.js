@@ -1,3 +1,4 @@
+debugger
 window.empConfig = [
     {
         title: "ID",
@@ -18,4 +19,8 @@ window.empConfig = [
   ];
   
   // window.empConfig = ["ID", "Name", "Date of Birth", "Email"];
-window.empData = window.retrieveFromStorage("empArry");
+let storedData = localStorage.getItem("empArry");
+let toJSON = JSON.parse(storedData);
+window.empData = toJSON;
+
+window.empType = ["number", "text", "date", "email"];
