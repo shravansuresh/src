@@ -1,5 +1,7 @@
 $(() => {
   window.createTable = (tableDiv, config, data, type, storageId) => {
+    debugger
+    console.log(storageId);
     let myTableDiv = document.getElementById(tableDiv);
     let table = document.createElement("table");
     table.setAttribute("class", "tableId");
@@ -69,7 +71,7 @@ $(() => {
             dltBtn.setAttribute("class", "Btn");
             dltBtn.innerHTML = '<img src="./images/delete.png" width="30px" height="30px">';
             dltBtn.addEventListener("click", function(event) {
-                window.dltRow(this, location);
+                window.dltRow(this, storageId);
                 event.preventDefault();
             });
             tr.appendChild(dltBtn);

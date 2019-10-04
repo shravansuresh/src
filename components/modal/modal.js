@@ -58,6 +58,8 @@ $(() => {
             if(retrieveFromStorage(storageId) == null){
                 data.push(rowObj);
                 window.saveToStorage(storageId, data);
+                let modal = document.getElementById("formModal");
+                modal.style.display ="none";
                 $("#modalBody").load(location.href + " #modalBody");
             }
             else{
@@ -65,12 +67,14 @@ $(() => {
                 data = window.retrieveFromStorage(storageId);
                 data.push(rowObj);
                 window.saveToStorage(storageId, data);
+                let modal = document.getElementById("formModal");
+                modal.style.display ="none";
                 $("#modalBody").load(location.href + " #modalBody");
             }
-            window.createTable(tableDiv, headArr, data)
+            document.getElementById("tableId").style.display = "none";
+            window.createTable(tableDiv, headArr, data);
         }
-        let modal = document.getElementById("formModal");
-        modal.style.display ="none";
+        
         //document.getElementById(tableDiv).style.display = "";
     }
     
