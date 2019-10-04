@@ -1,15 +1,15 @@
 $(() => {
   window.menu = [
     {
-      title: "home",
+      title: "Home",
       route: "home.html"
     },
     {
-      title: "students",
+      title: "Students",
       route: "students.html"
     },
     {
-      title: "employee",
+      title: "Employee",
       route: "employee.html"
     }
   ];
@@ -24,7 +24,7 @@ $(() => {
   };
 
   clickMenu = () => {
-    let menuStr = event.target.text;
+    let menuStr = event.target.text.toLowerCase();
     window.location.hash = "#" + menuStr;
     setContent(menuStr);
     createActiveMenu(menuStr);

@@ -1,6 +1,6 @@
 .headerMenu{
     Display: flex;
-    background: #343a40; 
+    background: #68717a; 
 }
 .logo{
     height: 40px;
@@ -17,6 +17,10 @@
     padding-left: 0px;
     padding-right: 20px;
 }
+.headerMenu li a:hover{
+    cursor: pointer;
+}
+
 #headerMenu{
     padding-left: 1px;
 }

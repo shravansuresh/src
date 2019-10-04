@@ -63,6 +63,8 @@ $(() => {
                 let modal = document.getElementById("formModal");
                 modal.style.display ="none";
                 $("#modalBody").load(location.href + " #modalBody");
+                let stored = retrieveFromStorage(storageId);
+                window.createTable(tableDiv, headArr, stored);
             }
             else{
                 debugger
@@ -72,9 +74,10 @@ $(() => {
                 let modal = document.getElementById("formModal");
                 modal.style.display ="none";
                 $("#modalBody").load(location.href + " #modalBody");
+                let stored = retrieveFromStorage(storageId);
+                window.createTable(tableDiv, headArr, stored);
             }
-            document.getElementById("tableId").style.display = "none";
-            window.createTable(tableDiv, headArr, data);
+            
         }
     }
     

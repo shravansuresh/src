@@ -3,6 +3,7 @@ $(() => {
     debugger
     console.log(storageId);
     let myTableDiv = document.getElementById(tableDiv);
+    myTableDiv.innerHTML = '';
     let table = document.createElement("table");
     table.setAttribute("class", "tableId");
     table.setAttribute("id", "tableId");
