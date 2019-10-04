@@ -45,7 +45,7 @@ $(() => {
     
     window.handleForm = (tableDiv, storageId, tableArr) => {
         let headArr = tableArr;
-        debugger
+        
         if(formValidation(headArr, tableDiv) == headArr.length){
             let data = [];
             let rowObj = {};
@@ -58,17 +58,20 @@ $(() => {
             if(retrieveFromStorage(storageId) == null){
                 data.push(rowObj);
                 window.saveToStorage(storageId, data);
+                $("#modalBody").load(location.href + " #modalBody");
             }
             else{
+                debugger
                 data = window.retrieveFromStorage(storageId);
                 data.push(rowObj);
                 window.saveToStorage(storageId, data);
+                $("#modalBody").load(location.href + " #modalBody");
             }
             window.createTable(tableDiv, headArr, data)
         }
         let modal = document.getElementById("formModal");
         modal.style.display ="none";
-        document.getElementById(tableDiv).style.display = "";
+        //document.getElementById(tableDiv).style.display = "";
     }
     
     window.formValidation = (headArr, tableDiv) => {
