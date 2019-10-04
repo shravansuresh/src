@@ -10,7 +10,7 @@
         
         </div>
         <div class="modalFooter">
-            <button type="button" id="modalBtn" onclick= 'window.handleForm("employeesTbl", "empArry", window.empConfig, window.empType)' class="submitBtn">Submit</button>
+            <button type="button" id="modalBtn" onclick= 'window.handleForm("employeesTbl", "empArry", window.empConfig)' class="submitBtn">Submit</button>
             <button type="button" id="modalBtn" onclick= 'clearForm()' class="clearBtn">Clear</button>
         </div>
     </div>
@@ -18,7 +18,7 @@
 <div id="employeesTbl">
     <h3>Employee Portal</h3>
     <div class="tableOp" >
-        <button type="button" class="addBtn" id="addBtn" onclick="window.addRowModal(window.empConfig, window.empType, 'employeesTbl')"><img src="./images/addicon.png" heigh= "50px" width= "50px" alt="add row" class="addBtn"></button>
+        <button type="button" class="addBtn" id="addBtn" onclick="window.addRowModal(window.empConfig, 'employeesTbl')"><img src="./assets/images/addicon.png" heigh= "50px" width= "50px" alt="add row" class="addBtn"></button>
         <div class="active-purple-3 active-purple-4 mb-4" style="display:none" id="search">
             <input class="form-control" type="text" placeholder="Search" aria-label="Search" id="searchTable"  onkeyup='searchTable("empArry")' >
         </div>

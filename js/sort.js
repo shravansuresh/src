@@ -59,7 +59,7 @@ function sortRow(sortBtn, sort, tableArr, storageId){
     let btn = document.getElementById(thKey);
     if(sort == 'asc'){
         btn.setAttribute("onclick", null);
-        btn.innerHTML = '<img src="./images/down.png" width="15px" height="auto">';
+        btn.innerHTML = '<img src="./assets/images/down.png" width="15px" height="auto">';
         btn.addEventListener("click", function(event) {
             sortRow(this, 'dsc', tableArr, storageId);
             event.preventDefault();
@@ -67,7 +67,7 @@ function sortRow(sortBtn, sort, tableArr, storageId){
     } 
     if(sort == 'dsc'){
         btn.setAttribute("onclick", null);
-        btn.innerHTML = '<img src="./images/up.png" width="15px" height="auto">';
+        btn.innerHTML = '<img src="./assets/images/up.png" width="15px" height="auto">';
         btn.addEventListener("click", function(event) {
             sortRow(this, 'asc', tableArr, storageId);
             event.preventDefault();

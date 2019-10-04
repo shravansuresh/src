@@ -1,19 +1,27 @@
 window.empConfig = [
     {
         title: "ID",
-        key: "empID"
+        key: "empID",
+        type: "number",
+        optional: "no"
     },
     {
         title: "Name",
-        key: "name"
+        key: "name",
+        type: "text",
+        optional: "no"
     },
     {
         title: "Date of Birth",
-        key: "dob"
+        key: "dob",
+        type: "date",
+        optional: "yes"
     },
     {
         title: "Email",
-        key: "email"
+        key: "email",
+        type: "email",
+        optional: "no"
     }
   ];
   
@@ -22,4 +30,3 @@ let storedData = localStorage.getItem("empArry");
 let toJSON = JSON.parse(storedData);
 window.empData = toJSON;
 window.empStorageId = "empArry";
-window.empType = ["number", "text", "date", "email"];

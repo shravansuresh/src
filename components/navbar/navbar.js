@@ -39,10 +39,10 @@ $(() => {
   setData = menu => {
     switch (menu) {
       case "students":
-        window.createTable("studentsTbl", window.studConfig, window.studData, window.studType, window.studStorageId);
+        window.createTable("studentsTbl", window.studConfig, window.studData, window.studStorageId);
         break;
       case "employee":
-        window.createTable("employeesTbl", window.empConfig, window.empData, window.empType, window.empStorageId);
+        window.createTable("employeesTbl", window.empConfig, window.empData, window.empStorageId);
         break;
 
       default:

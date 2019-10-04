@@ -1,5 +1,5 @@
 $(() => {
-  window.createTable = (tableDiv, config, data, type, storageId) => {
+  window.createTable = (tableDiv, config, data, storageId) => {
     debugger
     console.log(storageId);
     let myTableDiv = document.getElementById(tableDiv);
@@ -18,7 +18,7 @@ $(() => {
       let ascBtn = document.createElement("BUTTON");
       th.appendChild(document.createTextNode(value.title));
       ascBtn.setAttribute("class", "sortBtn");
-      ascBtn.innerHTML = '<img src="./images/up.png" width="15px" height="auto">';
+      ascBtn.innerHTML = '<img src="./assets/images/up.png" width="15px" height="auto">';
       ascBtn.setAttribute('id', value.title);
       ascBtn.addEventListener("click", function(event) {
         sortRow(this, 'asc', config, storageId);
@@ -61,15 +61,15 @@ $(() => {
             }
             let editBtn = document.createElement("BUTTON");
             editBtn.setAttribute("class", "Btn");
-            editBtn.innerHTML = '<img src="./images/edit.png" width="30px" height="30px">';
+            editBtn.innerHTML = '<img src="./assets/images/edit.png" width="30px" height="30px">';
             editBtn.addEventListener("click", function(event) {
-                editRow(this, config, storageId, type);
+                editRow(this, config, storageId);
                 event.preventDefault();
             });
             tr.appendChild(editBtn);
             let dltBtn = document.createElement("BUTTON");
             dltBtn.setAttribute("class", "Btn");
-            dltBtn.innerHTML = '<img src="./images/delete.png" width="30px" height="30px">';
+            dltBtn.innerHTML = '<img src="./assets/images/delete.png" width="30px" height="30px">';
             dltBtn.addEventListener("click", function(event) {
                 window.dltRow(this, storageId);
                 event.preventDefault();

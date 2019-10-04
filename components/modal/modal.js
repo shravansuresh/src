@@ -1,7 +1,6 @@
 $(() => {
-    window.addRowModal = (tableArr, type, tableDiv) => {
+    window.addRowModal = (tableArr, tableDiv) => {
         let headArr = tableArr;
-        let inputType = type;
         let i = 0;
         let form = document.createElement("FORM");
         form.setAttribute("type", "text");
@@ -9,14 +8,19 @@ $(() => {
         document.getElementById("modalBody").appendChild(form);
         headArr.forEach(element => {
             let label = document.createElement("LABEL");
-            label.innerHTML = element.title;
+            if(element.optional == "no"){
+                label.innerHTML = element.title;
+            }
+            else{
+                label.innerHTML = element.title+"(optional)";
+            }  
             form.appendChild(label);
             let input = document.createElement("INPUT");
-            input.setAttribute("type", inputType[i]);
-            if(inputType[i] == "date"){
+            input.setAttribute("type", element.type);
+            if(element.type == "date"){
                 input.setAttribute("max", "2000-12-31");
             }
-            else if(inputType[i] == "tel"){
+            else if(element.type == "tel"){
                 input.setAttribute("pattern", "+91[0-9]{4}[0-9]{6}");
                 input.setAttribute("placeholder","+91-XXXX-XXXXXX"); 
             }
@@ -24,7 +28,6 @@ $(() => {
             form.appendChild(input);
             let lineBreak = document.createElement('br');
             form.appendChild(lineBreak);
-            i++
         });
         let modal = document.getElementById("formModal");
         modal.style.display ="block";
@@ -43,9 +46,9 @@ $(() => {
         }
     }
     
-    window.handleForm = (tableDiv, storageId, tableArr, typeArr) => {
+    window.handleForm = (tableDiv, storageId, tableArr) => {
         let headArr = tableArr;
-        if(formValidation(headArr, tableDiv, typeArr) == headArr.length){
+        if(formValidation(headArr, tableDiv) == headArr.length){
             let data = [];
             let rowObj = {};
             let i =0;
@@ -75,71 +78,70 @@ $(() => {
         }
     }
     
-    window.formValidation = (headArr, tableDiv, typeArr) => {
-        console.log(typeArr);
+    window.formValidation = (headArr, tableDiv) => {
         let count = 0;
         headArr.forEach((item, index) =>{
-            type = typeArr[index];
-            let formValue = document.forms["formData"][item.title].value;
-            if(formValue == 0 ){
-                alert(item.title+" field empty");
-            }
-            else if(type == "number"){
-                let numberPattern = /^[-+]?\d+$/;
-                if(numberPattern.test(formValue) === true){
-                    if(formUniqueChecker(formValue, index, tableDiv) == 1 && item.title != "Age")
-                    {
-                        alert(item.title+" already exist");
-                    }
-                    else if(formValue < 0)
-                    {
-                        alert("Invalid "+item.title);
-                    }
-                    else{
-                        count++;
+                let type = item.type;
+                let formValue = document.forms["formData"][item.title].value;
+                if(formValue == 0 && item.optional == "no" ){
+                    alert(item.title+" field empty");
+                }
+                else if(type == "number"){
+                    let numberPattern = /^[-+]?\d+$/;
+                    if(numberPattern.test(formValue) === true){
+                        if(formUniqueChecker(formValue, index, tableDiv) == 1 && item.title != "Age")
+                        {
+                            alert(item.title+" already exist");
+                        }
+                        else if(formValue < 0)
+                        {
+                            alert("Invalid "+item.title);
+                        }
+                        else{
+                            count++;
                     }   
-                } 
-                else{
-                    alert("Invalid "+item).title;
-                }
-            }
-            else if(type == "text"){
-                let namePattern = /^[a-zA-Z ]*$/;
-                
-                if(namePattern.test(formValue) === true){
-                    count++;
-                }
-                else{
-                    alert(item.title+" must be in alphabets only");
-                }
-            }
-            else if(type == "email"){
-                let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-                if(emailPattern.test(formValue) === true){
-                    if(formUniqueChecker(formValue, index, tableDiv) == 1)
-                    {
-                        alert(item.title+" already exist");
-                    }
+                    } 
                     else{
+                    alert("Invalid "+item).title;
+                    }
+                }
+                else if(type == "text"){
+                    let namePattern = /^[a-zA-Z ]*$/;
+                
+                    if(namePattern.test(formValue) === true){
                         count++;
                     }
-                    
-                } 
-                else{
-                    alert("Invalid Email");
+                    else{
+                        alert(item.title+" must be in alphabets only");
+                    }
                 }
-            }
-            else if(type == "date"){
-                if(formValue <= "2000-12-31"){
+                else if(type == "email"){
+                    let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+                    if(emailPattern.test(formValue) === true){
+                        if(formUniqueChecker(formValue, index, tableDiv) == 1)
+                        {
+                            alert(item.title+" already exist");
+                        }
+                        else{
+                            count++;
+                        }
+                    
+                    } 
+                    else{
+                        alert("Invalid Email");
+                    }
+                }
+                else if(type == "date"){
+                    if(formValue <= "2000-12-31"){
+                        count++;
+                    }
+                    else{
+                        alert("Enter valid date")
+                    }
+                }
+                else if(type == "tel"){
                     count++;
                 }
-                else{
-                    alert("Enter valid date")
-                }
-            }
-            else if(type == "tel"){
-                count++;
-            }
         });
         return count;
     }
