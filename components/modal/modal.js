@@ -43,10 +43,9 @@ $(() => {
         }
     }
     
-    window.handleForm = (tableDiv, storageId, tableArr) => {
+    window.handleForm = (tableDiv, storageId, tableArr, typeArr) => {
         let headArr = tableArr;
-        
-        if(formValidation(headArr, tableDiv) == headArr.length){
+        if(formValidation(headArr, tableDiv, typeArr) == headArr.length){
             let data = [];
             let rowObj = {};
             let i =0;
@@ -74,12 +73,10 @@ $(() => {
             document.getElementById("tableId").style.display = "none";
             window.createTable(tableDiv, headArr, data);
         }
-        
-        //document.getElementById(tableDiv).style.display = "";
     }
     
-    window.formValidation = (headArr, tableDiv) => {
-        let typeArr=["number", "text", "date", "email"];
+    window.formValidation = (headArr, tableDiv, typeArr) => {
+        console.log(typeArr);
         let count = 0;
         headArr.forEach((item, index) =>{
             type = typeArr[index];
@@ -90,7 +87,7 @@ $(() => {
             else if(type == "number"){
                 let numberPattern = /^[-+]?\d+$/;
                 if(numberPattern.test(formValue) === true){
-                    if(formUniqueChecker(formValue, index, tableDiv) == 1)
+                    if(formUniqueChecker(formValue, index, tableDiv) == 1 && item.title != "Age")
                     {
                         alert(item.title+" already exist");
                     }
