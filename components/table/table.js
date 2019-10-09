@@ -26,10 +26,7 @@ $(() => {
       th.appendChild(ascBtn);
       tr.appendChild(th);
     }
-    if(data.length() == 0){
-        document.getElementById(tableDiv).style.display="none";
-        document.getElementById("searchTable").style.display = "none";
-    }
+    document.getElementById("searchTable").style.display = "none";
     
     // Table body
     // data.forEach((row, rowIdx) => {
@@ -80,7 +77,6 @@ $(() => {
             tr.appendChild(dltBtn);
         });
         myTableDiv.appendChild(table);
-        document.getElementById(tableDiv).style.display="";
         document.getElementById("searchTable").style.display = "block";
     }
   };
