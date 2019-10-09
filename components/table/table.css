@@ -8,23 +8,22 @@
 }
 .tableOp{
   display: flex;
-  margin-left: 23%;
-  margin-right: 28%;
+  margin-left: 7.5%;
+  margin-right: 14.3%;
   justify-content: space-between;
 }
 .tableId{
-  display: flex;
   justify-content: center;
   font-family: 'Asap', sans-serif;
   font-size: 13pt;
   color: #333333;
   border-collapse: collapse;
   text-align: center;
-  width: 69.5%;
+  width: 88.5%;
   height: 300px;
   overflow: auto;
-  margin-bottom: 80px; 
-  margin-left: 16%;
+  margin-bottom: 80px;
+  margin-left: 7.5%;
 }
 .tableId td {
   border: 1px solid rgb(221, 221, 221);
@@ -40,7 +39,6 @@
   background-color: rgba(128, 128, 128, 1);
   color: rgb(0, 0, 0);
 }
-
 .tHead{
   position: sticky;
   top: 0;
