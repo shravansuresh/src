@@ -1,7 +1,10 @@
 body{
   font-family: 'Asap', sans-serif;
 }
-.active {
+.headerMenu li a:hover{
+  color: white;
+}
+.headerMenu li a:active {
   color: white;
 }
 .addBtn{

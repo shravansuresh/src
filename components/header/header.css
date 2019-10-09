@@ -16,11 +16,15 @@
     font-size: 15pt;
     padding-left: 0px;
     padding-right: 20px;
+    color: darkgray;
 }
 .headerMenu li a:hover{
     cursor: pointer;
+    color: white;
 }
-
+.headerMenu li a:active{
+    color: white;
+}
 #headerMenu{
     padding-left: 1px;
 }
