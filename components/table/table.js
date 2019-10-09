@@ -27,9 +27,7 @@ $(() => {
       th.appendChild(ascBtn);
       tr.appendChild(th);
     }
-    
     if(data != null){
-        document.getElementById("searchTable").style.display = "block";
         data.forEach(item => {
             let tr = tableBody.insertRow(-1);
             for (let [key, value] of Object.entries(item)) {
@@ -65,7 +63,10 @@ $(() => {
             });
             tr.appendChild(dltBtn);
         });
+        document.getElementById("search").style.display = "block";
+        document.getElementById(tableDiv).style.display = "";
         myTableDiv.appendChild(table);
+        
     }
   };
 });

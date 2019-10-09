@@ -64,7 +64,7 @@ $(() => {
                 modal.style.display ="none";
                 $("#modalBody").load(location.href + " #modalBody");
                 let stored = retrieveFromStorage(storageId);
-                window.createTable(tableDiv, headArr, stored);
+                window.createTable(tableDiv, headArr, stored, storageId);
             }
             else{
                 debugger
@@ -75,7 +75,7 @@ $(() => {
                 modal.style.display ="none";
                 $("#modalBody").load(location.href + " #modalBody");
                 let stored = retrieveFromStorage(storageId);
-                window.createTable(tableDiv, headArr, stored);
+                window.createTable(tableDiv, headArr, stored, storageId);
             }
             
         }
@@ -83,13 +83,15 @@ $(() => {
     
     window.formValidation = (headArr, tableDiv) => {
         let count = 0;
+        debugger
         headArr.forEach((item, index) =>{
                 let type = item.type;
                 let formValue = document.forms["formData"][item.title].value;
-                if(formValue == 0 && item.optional == "no" ){
+                console.log(formValue);
+                if(formValue.length == 0 && item.optional == "no" ){
                     alert(item.title+" field empty");
                 }
-                else if(type == "number"){
+                else if(type == "number" && item.optional == "no"){
                     let numberPattern = /^[-+]?\d+$/;
                     if(numberPattern.test(formValue) === true){
                         if(formUniqueChecker(formValue, index, tableDiv) == 1 && item.title != "Age")
@@ -105,10 +107,10 @@ $(() => {
                     }   
                     } 
                     else{
-                    alert("Invalid "+item).title;
+                    alert("Invalid "+item.title);
                     }
                 }
-                else if(type == "text"){
+                else if(type == "text" && item.optional == "no"){
                     let namePattern = /^[a-zA-Z ]*$/;
                 
                     if(namePattern.test(formValue) === true){
@@ -118,7 +120,7 @@ $(() => {
                         alert(item.title+" must be in alphabets only");
                     }
                 }
-                else if(type == "email"){
+                else if(type == "email" && item.optional == "no"){
                     let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
                     if(emailPattern.test(formValue) === true){
                         if(formUniqueChecker(formValue, index, tableDiv) == 1)
@@ -134,7 +136,7 @@ $(() => {
                         alert("Invalid Email");
                     }
                 }
-                else if(type == "date"){
+                else if(type == "date" && item.optional == "no"){
                     if(formValue <= "2000-12-31"){
                         count++;
                     }
@@ -143,6 +145,9 @@ $(() => {
                     }
                 }
                 else if(type == "tel"){
+                    count++;
+                }
+                else if(item.optional == "yes"){
                     count++;
                 }
         });

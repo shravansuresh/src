@@ -1,11 +1,17 @@
 body{
   font-family: 'Asap', sans-serif;
 }
-.headerMenu li a:hover{
+/* .headerMenu li a:hover{
   color: white;
 }
 .headerMenu li a:active {
   color: white;
+} */
+.tableOp{
+  display: flex;
+  margin-left: 7.5%;
+  margin-right: 26.6%;
+  justify-content: left;
 }
 .addBtn{
   border:none;
@@ -13,7 +19,9 @@ body{
   height: 50px; 
   width: 50px;
   display: flex;
-  justify-content: center;  
+  justify-content: center;
+  margin-right: 20px;
+  margin-left: 6px;  
 }
 .portal{
   font-size: 25px;

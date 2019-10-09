@@ -39,10 +39,24 @@ $(() => {
   setData = menu => {
     switch (menu) {
       case "students":
-        window.createTable("studentsTbl", window.studConfig, window.studData, window.studStorageId);
+          if(window.studData == null || window.studData.length == 0){
+            document.getElementById("search").style.display = "none";
+            document.getElementById("studentsTbl").style.display = "none"; 
+          }
+          else{
+            window.createTable("studentsTbl", window.studConfig, window.studData, window.studStorageId);
+          }
         break;
       case "employee":
-        window.createTable("employeesTbl", window.empConfig, window.empData, window.empStorageId);
+          debugger
+          if(window.empData == null || window.empData.length == 0){
+            document.getElementById("search").style.display = "none";
+            document.getElementById("employeesTbl").style.display = "none"; 
+          }
+          else{
+            window.createTable("employeesTbl", window.empConfig, window.empData, window.empStorageId);
+          }
+        
         break;
 
       default:

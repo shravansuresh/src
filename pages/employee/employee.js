@@ -9,7 +9,7 @@ window.empConfig = [
         title: "Name",
         key: "name",
         type: "text",
-        optional: "no"
+        optional: "yes"
     },
     {
         title: "Date of Birth",
@@ -21,7 +21,7 @@ window.empConfig = [
         title: "Email",
         key: "email",
         type: "email",
-        optional: "no"
+        optional: "yes"
     }
   ];
   

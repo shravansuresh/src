@@ -1,1 +1,27 @@
-<div id="studentsTbl">Students</div>
+<div id="formModal" class="formModal" style="display:none">
+    <div class="modalContent">
+        <div class="modalHeader">
+            <span onclick="document.getElementById('formModal').style.display='none'" class="close" title="Close    ">&times;</span>
+            <h5>Please Fill the Fields</h5>
+        </div>
+        
+        <div class="modalBody" id="modalBody">
+        
+        </div>
+        <div class="modalFooter">
+            <button type="button" id="modalBtn" onclick= 'window.handleForm("studentsTbl", "studArry", window.studConfig)' class="submitBtn">Submit</button>
+            <button type="button" id="modalBtn" onclick= 'clearForm()' class="clearBtn">Clear</button>
+        </div>
+    </div>
+</div>
+<div class="portal">
+    <h3>Student Portal</h3>
+</div>
+
+<div class="tableOp" >
+    <button type="button" class="addBtn" id="addBtn" value="add row" onclick="window.addRowModal(window.studConfig, 'studentsTbl')"><img src="./assets/images/addicon.png" heigh= "50px" width= "50px" alt="add row" class="addBtn"></button>
+    <div class="active-purple-3 active-purple-4 mb-4" id="search">
+        <input class="form-control" type="text" placeholder="Search" aria-label="Search" id="searchTable"  onkeyup='searchTable("studArry")' >
+    </div>
+</div>
+<div id="studentsTbl"></div>
