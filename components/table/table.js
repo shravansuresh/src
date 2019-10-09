@@ -1,5 +1,6 @@
 $(() => {
   window.createTable = (tableDiv, config, data, storageId) => {
+    debugger
     let myTableDiv = document.getElementById(tableDiv);
     myTableDiv.innerHTML = '';
     let table = document.createElement("table");
