@@ -4,12 +4,13 @@
   color: #333333;
   border-collapse: collapse;
   text-align: center;
+  height: 300px;
   margin-bottom: 80px;  
 }
 .tableOp{
   display: flex;
   margin-left: 7.5%;
-  margin-right: 14.3%;
+  margin-right: 26.6%;
   justify-content: space-between;
 }
 .tableId{
@@ -19,8 +20,7 @@
   color: #333333;
   border-collapse: collapse;
   text-align: center;
-  width: 88.5%;
-  height: 300px;
+  width: 75%;
   overflow: auto;
   margin-bottom: 80px;
   margin-left: 7.5%;
