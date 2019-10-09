@@ -1,15 +1,21 @@
 window.studConfig = [
   {
     title: "ID",
-    key: "studentID"
+    key: "studentID",
+    type: "number",
+    optional: "yes"
   },
   {
     title: "Name",
-    key: "name"
+    key: "name",
+    type: "text",
+    optional: "yes"
   },
   {
-    title: "Age",
-    key: "age"
+    title: "Semester",
+    key: "semester",
+    type: "number",
+    optional: "yes"
   }
 ];
 
@@ -19,4 +25,3 @@ let storedData1 = localStorage.getItem("studArry");
 let toJSON1 = JSON.parse(storedData1);
 window.studData = toJSON1;
 window.studStorageId = "studArry";
-window.studType = ["number", "text", "number"];
