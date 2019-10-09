@@ -1,7 +1,5 @@
 $(() => {
   window.createTable = (tableDiv, config, data, storageId) => {
-    debugger
-    console.log(storageId);
     let myTableDiv = document.getElementById(tableDiv);
     myTableDiv.innerHTML = '';
     let table = document.createElement("table");
@@ -28,7 +26,7 @@ $(() => {
       th.appendChild(ascBtn);
       tr.appendChild(th);
     }
-
+    
     // Table body
     // data.forEach((row, rowIdx) => {
     //   let tr = document.createElement("tr");
