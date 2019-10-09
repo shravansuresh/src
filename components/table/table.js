@@ -26,21 +26,9 @@ $(() => {
       th.appendChild(ascBtn);
       tr.appendChild(th);
     }
-    document.getElementById("searchTable").style.display = "none";
     
-    // Table body
-    // data.forEach((row, rowIdx) => {
-    //   let tr = document.createElement("tr");
-    //   for (const col in row) {
-    //     let td = document.createElement("td");
-    //     td.appendChild(document.createTextNode(row[col]));
-    //     tr.appendChild(td);
-    //   }
-    //   tableBody.appendChild(tr);
-    // });
-
-    //myTableDiv.appendChild(table);
     if(data != null){
+        document.getElementById("searchTable").style.display = "block";
         data.forEach(item => {
             let tr = tableBody.insertRow(-1);
             for (let [key, value] of Object.entries(item)) {
@@ -77,7 +65,6 @@ $(() => {
             tr.appendChild(dltBtn);
         });
         myTableDiv.appendChild(table);
-        document.getElementById("searchTable").style.display = "block";
     }
   };
 });
