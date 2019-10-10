@@ -27,6 +27,12 @@ $(() => {
       th.appendChild(ascBtn);
       tr.appendChild(th);
     }
+    let th = document.createElement("th");
+    th.setAttribute("class", "tHead");
+    th.appendChild(document.createTextNode("Actions"));
+    tr.appendChild(th);
+    let addBtn = document.getElementById("tableOp");
+    addBtn.setAttribute("class", "tableOpNull");
     if(data != null){
         data.forEach(item => {
             let tr = tableBody.insertRow(-1);
@@ -63,6 +69,7 @@ $(() => {
             });
             tr.appendChild(dltBtn);
         });
+        addBtn.setAttribute("class", "tableOp");
         document.getElementById("search").style.display = "block";
         document.getElementById(tableDiv).style.display = "";
         myTableDiv.appendChild(table);

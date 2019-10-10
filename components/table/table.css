@@ -1,46 +1,44 @@
+@font-face {
+  font-family: 'Asap';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Asap'), local('Asap-Regular'), url(http://themes.googleusercontent.com/static/fonts/asap/v1/-KZsao_xwBpcExaHoPH8_w.ttf) format('truetype');
+}
 #employeesTbl {
-  font-family: 'Asap', sans-serif;
-  font-size: 13pt;
-  color: #333333;
-  border-collapse: collapse;
-  text-align: center;
   height: 300px;
-  margin-bottom: 80px; 
-  overflow: auto; 
+  margin-bottom: 80px;
+  overflow: auto;
+  width: 70%;
+  margin-left: 13.5%;
 }
 
 #studentsTbl {
-  font-family: 'Asap', sans-serif;
-  font-size: 13pt;
-  color: #333333;
-  border-collapse: collapse;
-  text-align: center;
   height: 300px;
-  margin-bottom: 80px;  
+  margin-bottom: 80px;
   overflow: auto;
+  width: 70%;
+  margin-left: 13.5%;
 }
 
 .tableId{
   justify-content: center;
   font-family: 'Asap', sans-serif;
-  font-size: 13pt;
+  font-size: 15px;
   color: #333333;
   border-collapse: collapse;
   text-align: center;
-  width: 75%;
+  width: 100%;
   overflow: auto;
   margin-bottom: 80px;
-  margin-left: 7.5%;
+  margin-left: 0%;
+  background-color: #E8E8E8;
 }
 .tableId td {
-  border: 1px solid rgb(221, 221, 221);
-  padding: 8px;
+  border: 2px solid rgb(221, 221, 221);
+  padding: 5px;
 }
 .tableId th {
-  padding-top: 12px;
-  padding-bottom: 12px; 
-  padding-left: 12px;
-  padding-right: 12px; 
+  padding: 5px;
   text-align: center;
   border: 1px solid rgb(221, 221, 221);
   background-color: rgba(128, 128, 128, 1);
@@ -52,7 +50,7 @@
   z-index: 1;
 }
 .Btn{
-  background-color: white;
+  background-color: #E8E8E8;
   border: none; 
   color: white; 
   margin: 1px;

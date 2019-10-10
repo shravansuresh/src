@@ -1,6 +1,10 @@
+#header{
+    background: #343a40; 
+}
 .headerMenu{
     Display: flex;
-    background: #343a40; 
+    width: 72%;
+    margin-left: 12.5%;
 }
 .logo{
     height: 40px;
@@ -11,9 +15,11 @@
 .headerMenu ul{
     display: flex;
     list-style-type: none;
+    width: 100%;
+    justify-content: flex-start;
 }
 li a{
-    font-size: 15pt;
+    font-size: 17px;
     padding-left: 0px;
     padding-right: 20px;
     color: darkgray;
@@ -28,4 +34,26 @@ li a:hover{
 }
 #headerMenu{
     padding-left: 1px;
+    width: 100%;
+    display: flex;
+}
+.sign{
+    padding: 8px 0px;
+    display: flex;
+    width: 25%;
+    margin-left: 6.4%;
+}
+.signinBtn{
+    border: none;
+    background-color: #343a40;
+    color: darkgray;
+    border-radius: 10px;
+    font-size: 17px;
+}
+.signupBtn{
+    border: 2px solid white;
+    background-color: #343a40;
+    color: darkgray;
+    border-radius: 10px;
+    font-size: 17px;
 }

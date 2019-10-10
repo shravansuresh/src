@@ -6,7 +6,7 @@ function editRow(editBtn, headArr, storageId){
             editBtn.innerHTML = '<img src="./assets/images/edit.png" width="30px" height="30px">';
             headArr.forEach( (item, index) => {
                 rows[rowIndex].cells[index].contentEditable = "false";
-                rows[rowIndex].cells[index].style.backgroundColor = "white";
+                rows[rowIndex].cells[index].style.backgroundColor = "#E8E8E8";
             }); 
             let rowObj = {};
             headArr.forEach((item, index) => {
@@ -24,7 +24,7 @@ function editRow(editBtn, headArr, storageId){
         editBtn.innerHTML = '<img src="./assets/images/save.jpg" width="30px" height="30px">';
         headArr.forEach((item, index) => {
             rows[rowIndex].cells[index].contentEditable = "true";
-            rows[rowIndex].cells[index].style.backgroundColor = "#E0E0E0";   
+            rows[rowIndex].cells[index].style.backgroundColor = "white";   
         });
         rows[rowIndex].cells[0].focus();
     }
