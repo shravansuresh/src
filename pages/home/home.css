@@ -5,7 +5,9 @@
 .images{
     display: flex;
     justify-content: space-between;
-    padding-left: 14px;
-    padding-right: 42px;
-    margin-top: 20px; 
+    margin: 50px 0px;
+}
+.images img{
+    height: auto;
+    width: 48%;
 }

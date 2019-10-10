@@ -13,9 +13,10 @@ input{
     margin: auto;
     position: relative;
     background-color: #ccc;
-    padding: 16px;
+    padding: 4px;
     border-top-left-radius: 24px;
     border-top-right-radius: 24px;
+    font-size: 17px;
   }
 
   button:hover {
@@ -30,7 +31,8 @@ input{
   
   
   .modalBody{
-    padding: 16px;
+    padding: 20px;
+    font-size: 15px;
   }
   
   
@@ -91,7 +93,7 @@ input{
   }
 
   .modalFooter{
-    display:flex;
-    justify-content: center;
-    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 12px;
   }

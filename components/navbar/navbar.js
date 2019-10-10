@@ -42,6 +42,8 @@ $(() => {
           if(window.studData == null || window.studData.length == 0){
             document.getElementById("search").style.display = "none";
             document.getElementById("studentsTbl").style.display = "none"; 
+            let addBtn = document.getElementById("tableOp");
+            addBtn.setAttribute("class", "tableOpNull");
           }
           else{
             window.createTable("studentsTbl", window.studConfig, window.studData, window.studStorageId);
@@ -51,7 +53,9 @@ $(() => {
           debugger
           if(window.empData == null || window.empData.length == 0){
             document.getElementById("search").style.display = "none";
-            document.getElementById("employeesTbl").style.display = "none"; 
+            document.getElementById("employeesTbl").style.display = "none";
+            let addBtn = document.getElementById("tableOp");
+            addBtn.setAttribute("class", "tableOpNull"); 
           }
           else{
             window.createTable("employeesTbl", window.empConfig, window.empData, window.empStorageId);

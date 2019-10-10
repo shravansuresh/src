@@ -1,12 +1,7 @@
 body{
   font-family: 'Asap', sans-serif;
 }
-/* .headerMenu li a:hover{
-  color: white;
-}
-.headerMenu li a:active {
-  color: white;
-} */
+
 .tableOp{
   display: flex;
   margin-left: 13.5%;
@@ -20,6 +15,7 @@ body{
   margin-left: 13.5%;
   display: flex;
   justify-content: center;
+  margin-bottom: 23.5%;
 }
 .addBtn{
   border:none;
@@ -27,16 +23,14 @@ body{
   height: 50px; 
   width: 50px;
   display: flex;
-  justify-content: center;
-  margin-right: 20px;
-  margin-left: 6px;  
+  justify-content: center; 
 }
 .portal{
   font-size: 25px;
   margin-left: 13.5%;
-  background-image: url("../assets/images/portalBack.jpg");
+  background-image: url("../assets/images/backimg2.png"), url("../assets/images/backimgSide.jpg"), url("../assets/images/backimgSide.jpg");
   background-repeat: no-repeat;
-  background-position: center bottom;
+  background-position: 58% 67%, 187% 68%, -80% 71%;
   padding: 25px 0px;
   width: 70%;
   text-align: center;
