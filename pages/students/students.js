@@ -25,3 +25,4 @@ let storedData1 = localStorage.getItem("studArry");
 let toJSON1 = JSON.parse(storedData1);
 window.studData = toJSON1;
 window.studStorageId = "studArry";
+

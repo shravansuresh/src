@@ -9,9 +9,17 @@ body{
 } */
 .tableOp{
   display: flex;
-  margin-left: 7.5%;
-  margin-right: 26.6%;
-  justify-content: left;
+  margin-left: 13.5%;
+  justify-content: space-between;
+  width: 70%;
+  padding-top: 20px;
+}
+.tableOpNull{
+  width: 70%;
+  padding-top: 20px;
+  margin-left: 13.5%;
+  display: flex;
+  justify-content: center;
 }
 .addBtn{
   border:none;
@@ -25,5 +33,11 @@ body{
 }
 .portal{
   font-size: 25px;
-  margin-left: 7.5%;
+  margin-left: 13.5%;
+  background-image: url("../assets/images/portalBack.jpg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  padding: 25px 0px;
+  width: 70%;
+  text-align: center;
 }

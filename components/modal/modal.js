@@ -68,7 +68,7 @@ $(() => {
             }
             else{
                 debugger
-                data = window.retrieveFromStorage(storageId);
+                data = retrieveFromStorage(storageId);
                 data.push(rowObj);
                 window.saveToStorage(storageId, data);
                 let modal = document.getElementById("formModal");
