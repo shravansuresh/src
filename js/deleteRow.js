@@ -12,6 +12,8 @@ $(() => {
             if(tableData.length == 0){
                 document.getElementById("search").style.display = "none";
                 document.getElementById("tableId").style.display = "none";
+                let addBtn = document.getElementById("tableOp");
+                addBtn.setAttribute("class", "tableOpNull");
             }
         }  
     }
