@@ -1,6 +1,6 @@
 $(() => {
     //$("#studTableOp").load("./components/tableOp/tableOp.html");
-    window.createOperationDiv = (divId, storageId, tableDiv) =>{
+    window.createOperationDiv = (divId, storageId, tableDiv, config) =>{
         debugger
         let div = document.getElementById(divId);
         let operationDiv = document.createElement("DIV");
@@ -10,7 +10,7 @@ $(() => {
         addBtn.setAttribute("title", "add details");
         addBtn.innerHTML = '<img src="./assets/images/add.png" width="50px" height="50px">';
         addBtn.addEventListener("click", function(event) {
-            addRowModal(window.studConfig, tableDiv);
+            addRowModal(config, tableDiv);
             event.preventDefault();
         });
         let searchDiv = document.createElement("DIV");
