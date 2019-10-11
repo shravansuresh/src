@@ -1,0 +1,40 @@
+.tableOp{
+  display: flex;
+  margin-left: 13.5%;
+  justify-content: space-between;
+  width: 70%;
+  padding-top: 20px;
+}
+.tableOpNull{
+  width: 70%;
+  padding-top: 20px;
+  margin-left: 13.5%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 23.5%;
+}
+.searchTable{
+    font-family: 'Asap', sans-serif;
+    text-align: right;
+    border: 2px solid lightgray;
+}
+.searchTable:hover{
+    border: 2px solid rgba(128, 128, 128, 1);;
+}
+@media only screen and (max-width: 600px) {
+    .tableOp{
+        display: flex;
+        margin-left: 0%;
+        justify-content: space-between;
+        width: 99%;
+        padding-top: 20px;
+      }
+      .tableOpNull{
+        width: 99%;
+        padding-top: 20px;
+        margin-left: 0%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 25%;
+      }
+}

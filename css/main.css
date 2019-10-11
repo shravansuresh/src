@@ -1,22 +1,14 @@
+@font-face {
+  font-family: 'Asap';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Asap'), local('Asap-Regular'), url(http://themes.googleusercontent.com/static/fonts/asap/v1/-KZsao_xwBpcExaHoPH8_w.ttf) format('truetype');
+}
 body{
   font-family: 'Asap', sans-serif;
 }
 
-.tableOp{
-  display: flex;
-  margin-left: 13.5%;
-  justify-content: space-between;
-  width: 70%;
-  padding-top: 20px;
-}
-.tableOpNull{
-  width: 70%;
-  padding-top: 20px;
-  margin-left: 13.5%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 23.5%;
-}
+
 .addBtn{
   border:none;
   background-color: white;
@@ -30,8 +22,20 @@ body{
   margin-left: 13.5%;
   background-image: url("../assets/images/backimg2.png"), url("../assets/images/backimgSide.jpg"), url("../assets/images/backimgSide.jpg");
   background-repeat: no-repeat;
-  background-position: 58% 67%, 187% 68%, -80% 71%;
+  background-position: 55% 105%, 187% 68%, -80% 71%;
   padding: 25px 0px;
   width: 70%;
   text-align: center;
+}
+@media only screen and (max-width: 600px) {
+  .portal {
+    font-size: 25px;
+    background-image: url("../assets/images/backimg2.png");
+    background-repeat: no-repeat;
+    background-position: 58% 67%;
+    padding: 25px 0px;
+    width: 100%;
+    margin-left: 0%;
+    text-align: center;
+}
 }

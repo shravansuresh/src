@@ -3,19 +3,22 @@ window.studConfig = [
     title: "ID",
     key: "studentID",
     type: "number",
-    optional: "yes"
+    optional: "no",
+    unique: "yes"
   },
   {
     title: "Name",
     key: "name",
     type: "text",
-    optional: "yes"
+    optional: "no",
+    unique: "no"
   },
   {
-    title: "Semester",
-    key: "semester",
+    title: "Class",
+    key: "class",
     type: "number",
-    optional: "yes"
+    optional: "yes",
+    unique: "no"
   }
 ];
 

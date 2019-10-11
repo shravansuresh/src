@@ -5,7 +5,7 @@ function searchTable(storageId){
     inputUp = input.toUpperCase();
     table = document.getElementById("tableId");
     tr = table.getElementsByTagName("tr");
-    let tableData = retrieveFromStorage("empArry");
+    let tableData = retrieveFromStorage(storageId);
     tableData.forEach((item, index) => {
         let flag =0;
         for (let [key, value] of Object.entries(item)) {
