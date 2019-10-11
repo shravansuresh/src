@@ -9,10 +9,10 @@ $(() => {
         headArr.forEach(element => {
             let label = document.createElement("LABEL");
             if(element.optional == "no"){
-                label.innerHTML = element.title;
+                label.innerHTML = element.title+"<sup>*</sup>";
             }
             else{
-                label.innerHTML = element.title+"(optional)";
+                label.innerHTML = element.title+" (optional)";
             }  
             form.appendChild(label);
             let input = document.createElement("INPUT");
@@ -89,10 +89,10 @@ $(() => {
                 if(formValue.length == 0 && item.optional == "no" ){
                     alert(item.title+" field empty");
                 }
-                else if(type == "number" && item.optional == "no"){
+                else if(type == "number"){
                     let numberPattern = /^[-+]?\d+$/;
                     if(numberPattern.test(formValue) === true){
-                        if(formUniqueChecker(formValue, index, tableDiv) == 1 && item.title != "Age")
+                        if(formUniqueChecker(formValue, index, tableDiv) == 1 && item.unique == "yes")
                         {
                             alert(item.title+" already exist");
                         }
@@ -102,39 +102,43 @@ $(() => {
                         }
                         else{
                             count++;
-                    }   
+                        }   
                     } 
                     else{
-                    alert("Invalid "+item.title);
+                        alert("Invalid "+item.title);
                     }
                 }
-                else if(type == "text" && item.optional == "no"){
-                    let namePattern = /^[a-zA-Z ]*$/;
-                
+                else if(type == "text"){
+                    let namePattern = /^[a-zA-Z\s]*$/;
                     if(namePattern.test(formValue) === true){
-                        count++;
-                    }
-                    else{
-                        alert(item.title+" must be in alphabets only");
-                    }
-                }
-                else if(type == "email" && item.optional == "no"){
-                    let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-                    if(emailPattern.test(formValue) === true){
-                        if(formUniqueChecker(formValue, index, tableDiv) == 1)
+                        if(formUniqueChecker(formValue, index, tableDiv) == 1 && item.unique == "yes")
                         {
                             alert(item.title+" already exist");
                         }
                         else{
                             count++;
                         }
-                    
-                    } 
+                    }
                     else{
-                        alert("Invalid Email");
+                        alert("Invalid "+item.title);
                     }
                 }
-                else if(type == "date" && item.optional == "no"){
+                else if(type == "email"){
+                    let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+                    if(emailPattern.test(formValue) === true){
+                        if(formUniqueChecker(formValue, index, tableDiv) == 1 && item.unique == "yes")
+                        {
+                            alert(item.title+" already exist");
+                        }
+                        else{
+                            count++;
+                        }
+                    }
+                    else{
+                        alert("Invalid "+item.title);
+                    }
+                }
+                else if(type == "date"){
                     if(formValue <= "2000-12-31"){
                         count++;
                     }

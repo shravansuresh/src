@@ -41,10 +41,11 @@ li a:hover{
 .sign{
     padding: 8px 0px;
     display: flex;
-    width: 25%;
-    margin-left: 6.4%;
+    width: 22.2%;
+    margin-left: 0%;
 }
 .signinBtn{
+    font-family: 'Asap', sans-serif;
     border: none;
     background-color: #343a40;
     color: darkgray;
@@ -52,9 +53,17 @@ li a:hover{
     font-size: 17px;
 }
 .signupBtn{
+    font-family: 'Asap', sans-serif;
     border: 2px solid white;
     background-color: #343a40;
     color: darkgray;
     border-radius: 10px;
     font-size: 17px;
 }
+@media only screen and (max-width: 600px) {
+    .headerMenu {
+        Display: flex;
+        width: 99%;
+        margin-left: 0px;
+    }
+  }

@@ -39,6 +39,7 @@ $(() => {
   setData = menu => {
     switch (menu) {
       case "students":
+          window.createOperationDiv("studTableOp", window.studStorageId, "studentsTbl");
           if(window.studData == null || window.studData.length == 0){
             document.getElementById("search").style.display = "none";
             document.getElementById("studentsTbl").style.display = "none"; 
@@ -50,7 +51,7 @@ $(() => {
           }
         break;
       case "employee":
-          debugger
+          window.createOperationDiv("empTableOp", window.empStorageId, "employeesTbl");
           if(window.empData == null || window.empData.length == 0){
             document.getElementById("search").style.display = "none";
             document.getElementById("employeesTbl").style.display = "none";

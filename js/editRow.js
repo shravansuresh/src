@@ -36,13 +36,13 @@ function editRowValidation(rowIndex, headArr){
     let count = 0;
     headArr.forEach((item, index) => {
             let type = item.type;
-            if(rows[rowIndex].cells[index].innerText == 0 && item.optional == "yes" ){
-                count++;
+            if(rows[rowIndex].cells[index].innerText.length == 0 && item.optional == "no"){
+                alert(item.title+" field empty");
             }
             else if(type == "number"){
                 let numberPattern = /^[-+]?\d+$/;
                 if(numberPattern.test(rows[rowIndex].cells[index].innerText) === true){
-                    if(editUniqueChecker(rows[rowIndex].cells[index].innerText, index, rowIndex) == 1)
+                    if(editUniqueChecker(rows[rowIndex].cells[index].innerText, index, rowIndex) == 1 && item.unique == "yes")
                     {
                         alert(headArr[index].title+" already exist");
                     }
@@ -59,10 +59,16 @@ function editRowValidation(rowIndex, headArr){
                 }
             }   
             else if(type == "text"){
-                let namePattern = /^[a-zA-Z ]*$/;
+                let namePattern = /^[a-zA-Z\s]*$/;
             
                 if(namePattern.test(rows[rowIndex].cells[index].innerText) === true){
-                    count++;
+                    if(editUniqueChecker(rows[rowIndex].cells[index].innerText, index, rowIndex) == 1 && item.unique == "yes")
+                    {
+                        alert(headArr[index].title+" already exist");
+                    }
+                    else{
+                        count++;
+                    }
                 }
                 else{
                     alert(headArr[index].title+" must be in alphabets only");
@@ -79,7 +85,7 @@ function editRowValidation(rowIndex, headArr){
             else if(type == "email"){
                 let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
                 if(emailPattern.test(rows[rowIndex].cells[index].innerText) === true){
-                    if(editUniqueChecker(rows[rowIndex].cells[index].innerText, index, rowIndex) == 1)
+                    if(editUniqueChecker(rows[rowIndex].cells[index].innerText, index, rowIndex) == 1 && item.unique == "yes")
                     {
                         alert(headArr[index].title+" already exist");
                     }
@@ -91,6 +97,9 @@ function editRowValidation(rowIndex, headArr){
                 else{
                     alert("Invalid "+headArr[index].title);
                 }
+            }
+            else if(item.optional == "yes"){
+                count++;
             }
     });
     return count;

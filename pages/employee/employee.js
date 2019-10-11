@@ -3,25 +3,29 @@ window.empConfig = [
         title: "ID",
         key: "empID",
         type: "number",
-        optional: "no"
+        optional: "no",
+        unique: "yes"
     },
     {
         title: "Name",
         key: "name",
         type: "text",
-        optional: "yes"
+        optional: "no",
+        unique: "no"
     },
     {
         title: "Date of Birth",
         key: "dob",
         type: "date",
-        optional: "yes"
+        optional: "yes",
+        unique: "no"
     },
     {
         title: "Email",
         key: "email",
         type: "email",
-        optional: "yes"
+        optional: "no",
+        unique: "yes"
     }
   ];
   

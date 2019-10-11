@@ -97,3 +97,12 @@ input{
     justify-content: space-evenly;
     padding: 12px;
   }
+  sup{
+    color: red;
+  }
+  @media only screen and (max-width: 600px) {
+    .modalContent{
+      width: 50%;
+    }
+  }
+  

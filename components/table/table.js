@@ -33,6 +33,7 @@ $(() => {
     tr.appendChild(th);
     let addBtn = document.getElementById("tableOp");
     addBtn.setAttribute("class", "tableOp");
+    document.getElementById("search").style.display = "block";
     if(data != null){
         data.forEach(item => {
             let tr = tableBody.insertRow(-1);
@@ -69,7 +70,6 @@ $(() => {
             });
             tr.appendChild(dltBtn);
         });
-        document.getElementById("search").style.display = "block";
         document.getElementById(tableDiv).style.display = "";
         myTableDiv.appendChild(table);
         
