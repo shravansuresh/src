@@ -39,6 +39,9 @@ function editRowValidation(rowIndex, headArr){
             if(rows[rowIndex].cells[index].innerText.length == 0 && item.optional == "no"){
                 alert(item.title+" field empty");
             }
+            else if(rows[rowIndex].cells[index].innerText.length == 0 && item.optional == "yes"){
+                count++;
+            }
             else if(type == "number"){
                 let numberPattern = /^[-+]?\d+$/;
                 if(numberPattern.test(rows[rowIndex].cells[index].innerText) === true){
@@ -97,9 +100,6 @@ function editRowValidation(rowIndex, headArr){
                 else{
                     alert("Invalid "+headArr[index].title);
                 }
-            }
-            else if(item.optional == "yes"){
-                count++;
             }
     });
     return count;

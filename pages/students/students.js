@@ -25,7 +25,7 @@ window.studConfig = [
 // window.studConfig = ["ID", "Name", "Age"];
 
 let storedData1 = localStorage.getItem("studArry");
-let toJSON1 = JSON.parse(storedData1);
+let toJSON1 = jQuery.parseJSON(storedData1);
 window.studData = toJSON1;
 window.studStorageId = "studArry";
 

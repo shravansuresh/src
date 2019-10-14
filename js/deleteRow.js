@@ -2,7 +2,6 @@ $(() => {
     
     window.dltRow = (dltBtn, storageId) => {
         if (confirm("Confim Deletion?") == true) {
-            debugger
             let tableId = document.getElementById("tableId");
             let rowIndex = (dltBtn.parentNode.rowIndex)-1;
             let tableData = retrieveFromStorage(storageId);
