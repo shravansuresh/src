@@ -1,7 +1,6 @@
 $(() => {
     //$("#studTableOp").load("./components/tableOp/tableOp.html");
     window.createOperationDiv = (divId, storageId, tableDiv, config) =>{
-        debugger
         let div = document.getElementById(divId);
         let operationDiv = document.createElement("DIV");
         operationDiv.setAttribute("id", "tableOp");

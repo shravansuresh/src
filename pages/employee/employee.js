@@ -31,6 +31,6 @@ window.empConfig = [
   
   // window.empConfig = ["ID", "Name", "Date of Birth", "Email"];
 let storedData = localStorage.getItem("empArry");
-let toJSON = JSON.parse(storedData);
+let toJSON = jQuery.parseJSON(storedData);
 window.empData = toJSON;
 window.empStorageId = "empArry";

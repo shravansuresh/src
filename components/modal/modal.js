@@ -65,7 +65,6 @@ $(() => {
                 window.createTable(tableDiv, headArr, stored, storageId);
             }
             else{
-                debugger
                 data = retrieveFromStorage(storageId);
                 data.push(rowObj);
                 window.saveToStorage(storageId, data);
@@ -85,9 +84,11 @@ $(() => {
         headArr.forEach((item, index) =>{
                 let type = item.type;
                 let formValue = document.forms["formData"][item.title].value;
-                console.log(formValue);
                 if(formValue.length == 0 && item.optional == "no" ){
                     alert(item.title+" field empty");
+                }
+                else if(formValue.length == 0 && item.optional == "yes"){
+                    count++;
                 }
                 else if(type == "number"){
                     let numberPattern = /^[-+]?\d+$/;
@@ -119,6 +120,9 @@ $(() => {
                             count++;
                         }
                     }
+                    else if(item.optional == "yes" && formValue.length == 0){
+                        count++;
+                    }
                     else{
                         alert("Invalid "+item.title);
                     }
@@ -134,6 +138,9 @@ $(() => {
                             count++;
                         }
                     }
+                    else if(item.optional == "yes" && formValue.length == 0){
+                        count++;
+                    }
                     else{
                         alert("Invalid "+item.title);
                     }
@@ -147,9 +154,6 @@ $(() => {
                     }
                 }
                 else if(type == "tel"){
-                    count++;
-                }
-                else if(item.optional == "yes"){
                     count++;
                 }
         });
