@@ -1,12 +1,19 @@
 $(() => {
     //$("#studTableOp").load("./components/tableOp/tableOp.html");
     window.createOperationDiv = (divId, storageId, tableDiv, config) =>{
+        let buttonTitle;
+        if(storageId == "studArry"){
+            buttonTitle = "student";
+        }
+        else if(storageId == "empArry"){
+            buttonTitle = "employee";
+        }
         let div = document.getElementById(divId);
         let operationDiv = document.createElement("DIV");
         operationDiv.setAttribute("id", "tableOp");
         let addBtn = document.createElement("BUTTON");
         addBtn.setAttribute("class", "addBtn");
-        addBtn.setAttribute("title", "add details");
+        addBtn.setAttribute("title", "add "+buttonTitle+" details");
         addBtn.innerHTML = '<img src="./assets/images/add.png" width="50px" height="50px">';
         addBtn.addEventListener("click", function(event) {
             addRowModal(config, tableDiv);
