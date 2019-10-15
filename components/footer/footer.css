@@ -14,3 +14,7 @@
     color: #fefefe;
     font-size: 14px;
   }
+  .footerText a{
+    color: rgb(185, 71, 71);
+    text-decoration: none;
+  }
