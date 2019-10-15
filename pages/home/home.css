@@ -11,6 +11,9 @@
     height: auto;
     width: 48%;
 }
+.images img:hover{
+    opacity: .5;
+}
 @media only screen and (min-width: 300px) and (max-width: 480px){
     .container {
         margin-bottom: 38%;
