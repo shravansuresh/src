@@ -60,10 +60,22 @@ li a:hover{
     border-radius: 10px;
     font-size: 17px;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 480px) and (max-width: 600px) {
     .headerMenu {
         Display: flex;
         width: 99%;
         margin-left: 0px;
+    }
+  }
+@media only screen and (min-width: 300px) and (max-width: 480px){
+    .sign{
+        display: none;
+    }
+    .modalContent {
+        width: 80%;
+    }
+    .headerMenu {
+        width: 100%;
+        margin-left: 0;
     }
   }

@@ -11,3 +11,8 @@
     height: auto;
     width: 48%;
 }
+@media only screen and (min-width: 300px) and (max-width: 480px){
+    .container {
+        margin-bottom: 38%;
+    }
+}
